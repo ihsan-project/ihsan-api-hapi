@@ -72,3 +72,22 @@ In the meantime, here are the methods of viewing/editing the documentation:
      - `docker pull swaggerapi/swagger-editor`
      - `docker run -d -p 80:8080 swaggerapi/swagger-editor`
      - `open http://localhost/`
+
+### Restarting postgresql
+
+Sometimes when you run `brew services list` and see an error next to `postgresql`, and running `brew services restart postgresql` doesn't help. Try the following: `rm -f /usr/local/var/postgres/postmaster.pid`
+
+If that doesn't work, remove the postgres instance entirely and reinstall with:
+- `brew remove postgres`
+- `rm -rf /usr/local/var/postgres`
+- `brew install postgres`
+- `brew start service postgres`
+
+## Deployment
+
+### Debugging
+
+- Sometimes you have to retry the **Build** phase of CodePipeline over and over again because of the following error:
+```
+Phase context status code: COMMAND_EXECUTION_ERROR Message: Error while executing command: docker build -t $REPOSITORY_URI:latest .. Reason: exit status 1
+```
