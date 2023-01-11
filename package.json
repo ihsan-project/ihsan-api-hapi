@@ -42,7 +42,7 @@
     "eslint": "^7.27.0",
     "google-auth-library": "^6.1.6",
     "hapi-pagination": "^4.0.0",
-    "knex": "^0.95.6",
+    "knex": "^2.4.0",
     "moment": "^2.29.1",
     "objection": "^2.2.15",
     "pg": "^8.6.0"
